@@ -1,0 +1,53 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block header %}
+    <header class="clearfix header padding-site">
+      <a href="{% url 'main' %}"><img src="{% static 'img/logo.svg' %}" alt="logo"></a>
+        {% include 'mainapp/include_menu.html' %}
+      <h1 class="header-title">Our Products Range</h1>
+    </header>
+{% endblock header %}
+
+{% block content %}
+    <div class="padding-site catalog-menu-div clearfix">
+      <ul class="catalog-menu clearfix">
+        <li class="catalog-menu-li catalog-menu-li-activ"><a href="#" class="catalog-menu-link catalog-menu-link-activ">All</a></li>
+        <li class="catalog-menu-li"><a href="#" class="catalog-menu-link">HOME</a></li>
+        <li class="catalog-menu-li"><a href="#" class="catalog-menu-link">OFFICE</a></li>
+        <li class="catalog-menu-li"><a href="#" class="catalog-menu-link">FURNITURE</a></li>
+        <li class="catalog-menu-li"><a href="#" class="catalog-menu-link">MODERN</a></li>
+        <li class="catalog-menu-li"><a href="#" class="catalog-menu-link">CLASSIC</a></li>
+      </ul>
+    </div>
+    <div class="tranding-products-img padding-site clearfix">
+
+{% for product in products.2 %}
+      <div class="{{ product.class_list }}">
+        <img src="{% static 'img/' %}{{ product.src }}" alt="">
+      </div>
+{% endfor %}
+
+    </div>
+    <div class="reload clearfix"><a href="#" class="reload-link"><span class="icon-loop2"></span></a></div>
+    <div class="catalog-exclusive-products clearfix">
+      <div class="exclusive-product-1 clearfix">
+        <div class="exclusive-content-block">
+          <p class="exclusive-trending">exclusive</p>
+          <h2 class="exclusive-h2">Fishnet Chair</h2>
+          <p class="exclusive-content">Seat and back with upholstery made of cold cure foam.
+            Steel frame, available in matt</p>
+          <a href="" class="button">Order Us <img src="{% static 'img/arrow.png' %}" alt="arrow" style="width: 9px; height: 12px;"></a>
+        </div>
+      </div>
+      <div class="exclusive-product-2 clearfix">
+        <div class="exclusive-content-block">
+          <p class="exclusive-trending">exclusive</p>
+          <h2 class="exclusive-h2">Fishnet Chair</h2>
+          <p class="exclusive-content">Seat and back with upholstery made of cold cure foam.
+            Steel frame, available in matt</p>
+          <a href="" class="button">Order Us <img src="{% static 'img/arrow.png' %}" alt="arrow" style="width: 9px; height: 12px;"></a>
+        </div>
+      </div>
+    </div>
+{% endblock content %}
