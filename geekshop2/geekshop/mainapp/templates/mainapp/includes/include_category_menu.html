@@ -1,0 +1,9 @@
+<ul class="products-menu clearfix">
+    {% for link in links_menu %}
+    <li class="product-menu-list">
+        <a href="{% url 'products' %}{{ link.pk }}" class="product-menu-link">
+            {{ link.name }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
